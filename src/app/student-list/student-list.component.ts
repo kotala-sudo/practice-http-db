@@ -14,7 +14,7 @@ import { Student } from '../student';
 
 export class StudentListComponent implements OnInit{
 
-  students: Student[] = [];
+  studentList: Student[] = [];
   nextID = 0;
   sName: string;
   sAge: number
@@ -24,7 +24,7 @@ export class StudentListComponent implements OnInit{
   }
 
   ngOnInit(){
-    this.students = this.stdService.STUDENTS;
+    this.studentList = this.stdService.STUDENTS;
   }
 
   addNewStudent(){
@@ -33,10 +33,10 @@ export class StudentListComponent implements OnInit{
       name: this.sName,
       age: this.sAge
     }
-    this.students.push(newStudent);
+    this.studentList.push(newStudent);
   }
 
   onClearData(){
-    this.students = [];
+    this.studentList = [];
   }
 }
